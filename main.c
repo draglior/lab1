@@ -53,27 +53,27 @@ int main(){
         lcd_locate(0, 5);
         lcd_printf("%d",my_counter);
         my_counter++;
-        if (my_counter & (1 << 0))
+        if (my_counter & 0x01) //AND Bit0 (If my_counter AND 0000 0001)
             SETBIT(LED5_PORT);
         else
             CLEARLED(LED5_PORT);
         
-        if (my_counter & (1 << 1))
+        if (my_counter & 0x02) //AND Bit1 (If my_counter AND 0000 0010)
             SETLED(LED4_PORT);
         else
             CLEARLED(LED4_PORT);
         
-        if (my_counter & (1 << 2))
+        if (my_counter & 0x04) //AND Bit2 (If my_counter AND 0000 0100)
             SETLED(LED3_PORT);
         else
             CLEARLED(LED3_PORT);
         
-        if (my_counter & (1 << 3))
+        if (my_counter & 0x08) //AND Bit3 (If my_counter AND 0000 1000)
             SETLED(LED2_PORT);
         else
             CLEARLED(LED2_PORT);
         
-        if (my_counter & (1 << 4))
+        if (my_counter & 0x10) //AND Bit4 (If my_counter AND 0001 0000)
             SETLED(LED1_PORT);
         else
             CLEARLED(LED1_PORT);
@@ -81,4 +81,5 @@ int main(){
         __delay_ms(1000);
     }
 }
+
 

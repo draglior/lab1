@@ -51,7 +51,7 @@ int main(){
     
     while(1){
         lcd_locate(0, 5);
-        lcd_printf("%d",my_counter);
+        lcd_printf("Counter: %d",my_counter);
         
         if (my_counter & 0x01) //AND Bit0 (If my_counter AND 0000 0001)
             SETBIT(LED5_PORT);
@@ -82,6 +82,5 @@ int main(){
         __delay_ms(1000);
     }
 }
-
 
 
